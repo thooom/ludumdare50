@@ -81,15 +81,4 @@ public class PlaceObjectLogic : MonoBehaviour
         float rotation_z = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         lastPlacedObject.transform.rotation = Quaternion.Euler(0f, 0f, rotation_z);
     }
-
-    private int GetActiveObject()
-    {
-        return 0;
-        // TODO: Connect med Inventory
-    }
-
-    float AngleBetweenTwoPoints(Vector3 a, Vector3 b)
-    {
-        return Mathf.Atan2(a.y - b.y, a.x - b.x) * Mathf.Rad2Deg;
-    }
 }
