@@ -82,11 +82,6 @@ public class PlaceObjectLogic : MonoBehaviour
         lastPlacedObject.transform.rotation = Quaternion.Euler(0f, 0f, rotation_z);
     }
 
-    private void PutItemBackInInventory()
-    {
-
-    }
-
     private int GetActiveObject()
     {
         return 0;
