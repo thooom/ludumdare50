@@ -36,7 +36,6 @@ public class PlaceObjectLogic : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero, 100f);
             if (hit.collider != null && hit.collider.gameObject.tag == "Deletable")
             { 
-                hit.collider.gameObject.name
                 Destroy(hit.collider.gameObject);
             }
         }
