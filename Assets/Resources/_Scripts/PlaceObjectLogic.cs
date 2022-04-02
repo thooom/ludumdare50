@@ -6,6 +6,8 @@ public class PlaceObjectLogic : MonoBehaviour
 {
     private List<GameObject> objectsToPlace;
     public GameObject lastPlacedObject;
+    public static bool HasActiveFan = false;
+    public static bool HasActivePlank = false;
 
     void Awake()
     {
@@ -17,7 +19,7 @@ public class PlaceObjectLogic : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (ButtonPushed.SelectedButton == 0)
+            if (ButtonPushed.SelectedButton != -1)
             {
                 PlaceObject();
             }
@@ -35,7 +37,16 @@ public class PlaceObjectLogic : MonoBehaviour
             Vector2 mousePos = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
             RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero, 100f);
             if (hit.collider != null && hit.collider.gameObject.tag == "Deletable")
-            { 
+            {
+                if (hit.collider.gameObject.name.Contains("Fan"))
+                {
+                    ButtonPushed.HasActiveFan = false;
+                }
+                else if (hit.collider.gameObject.name.Contains("Plank"))
+                {
+                    ButtonPushed.HasActivePlank = false;
+                }
+
                 Destroy(hit.collider.gameObject);
             }
         }
@@ -46,6 +57,16 @@ public class PlaceObjectLogic : MonoBehaviour
         var position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         position.z = 0;
         lastPlacedObject = Instantiate(objectsToPlace[GetActiveObject()], position, Quaternion.identity);
+
+        if (ButtonPushed.SelectedButton == 0)
+        {
+            ButtonPushed.HasActiveFan = true;
+        }
+        else if (ButtonPushed.SelectedButton == 1)
+        {
+            ButtonPushed.HasActivePlank = true;
+        }
+        
         ButtonPushed.SelectedButton = -1;
     }
 
