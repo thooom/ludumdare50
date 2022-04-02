@@ -55,20 +55,23 @@ public class PlaceObjectLogic : MonoBehaviour
 
     private void PlaceObject()
     {
-        var position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        position.z = 0;
-        lastPlacedObject = Instantiate(objectsToPlace[GetActiveObject()], position, Quaternion.identity);
+        if (ButtonPushed.SelectedButton > -1 && ButtonPushed.SelectedButton < objectsToPlace.Count)
+        {
+            var position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            position.z = 0;
+            lastPlacedObject = Instantiate(objectsToPlace[ButtonPushed.SelectedButton], position, Quaternion.identity);
 
-        if (ButtonPushed.SelectedButton == 0)
-        {
-            ButtonPushed.HasActiveFan = true;
-        }
-        else if (ButtonPushed.SelectedButton == 1)
-        {
-            ButtonPushed.HasActivePlank = true;
-        }
+            if (ButtonPushed.SelectedButton == 0)
+            {
+                ButtonPushed.HasActiveFan = true;
+            }
+            else if (ButtonPushed.SelectedButton == 1)
+            {
+                ButtonPushed.HasActivePlank = true;
+            }
         
-        ButtonPushed.SelectedButton = -1;
+            ButtonPushed.SelectedButton = -1;
+        }
     }
 
     private void RotateObject()
