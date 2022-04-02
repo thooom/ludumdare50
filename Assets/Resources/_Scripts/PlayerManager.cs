@@ -23,7 +23,6 @@ public class PlayerManager : MonoBehaviour
     {
         currentPos = player.transform.position;
 
-
         scoreBoard.GetComponent<ScoreCounter>().counter = Mathf.RoundToInt((startPos - currentPos).magnitude);
 
     }
