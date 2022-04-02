@@ -27,6 +27,15 @@ public class PlaceObjectLogic : MonoBehaviour
         {
             lastPlacedObject = null;
         }
+        if (Input.GetMouseButtonDown(1))
+        {
+            Vector2 mousePos = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
+            RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero, 100f);
+            if (hit.collider != null)
+            { 
+                Destroy(hit.collider.gameObject);
+            }
+        }
     }
 
     private void PlaceObject()
@@ -38,10 +47,15 @@ public class PlaceObjectLogic : MonoBehaviour
 
     private void RotateObject()
     {
-        Vector2 positionOnScreen = Camera.main.WorldToViewportPoint(transform.position);
-        Vector2 mouseOnScreen = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        float angle = AngleBetweenTwoPoints(positionOnScreen, mouseOnScreen);
-        lastPlacedObject.transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle));
+        Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - lastPlacedObject.transform.position;
+        difference.Normalize();
+        float rotation_z = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+        lastPlacedObject.transform.rotation = Quaternion.Euler(0f, 0f, rotation_z);
+    }
+
+    private void PutItemBackInInventory()
+    {
+
     }
 
     private int GetActiveObject()
