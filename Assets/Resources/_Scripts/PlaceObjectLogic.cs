@@ -17,7 +17,10 @@ public class PlaceObjectLogic : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            PlaceObject();
+            if (ButtonPushed.SelectedButton == 0)
+            {
+                PlaceObject();
+            }
         }
         if (lastPlacedObject != null && Input.GetMouseButton(0))
         {
@@ -34,6 +37,7 @@ public class PlaceObjectLogic : MonoBehaviour
         var position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         position.z = 0;
         lastPlacedObject = Instantiate(objectsToPlace[GetActiveObject()], position, Quaternion.identity);
+        ButtonPushed.SelectedButton = -1;
     }
 
     private void RotateObject()
