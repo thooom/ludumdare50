@@ -37,9 +37,6 @@ public class ButtonPushed : MonoBehaviour
         {
             SelectedButton = -1;
         }
-        
-        //fanButton.SetActive(!HasActiveFan);
-        //plankButton.SetActive(!HasActivePlank);
 
         fanButton.enabled = !HasActiveFan;
         plankButton.enabled = !HasActivePlank;
