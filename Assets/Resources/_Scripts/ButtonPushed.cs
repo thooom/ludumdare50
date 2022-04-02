@@ -1,15 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ButtonPushed : MonoBehaviour
 {
     public static int SelectedButton = -1;
+    public static bool HasActiveFan = false;
+    public static bool HasActivePlank = false;
+    private Button fanButton;
+    private Button plankButton;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        fanButton = GameObject.Find("SelectFanButton").GetComponent<Button>();
+        plankButton = GameObject.Find("SelectPlankButton").GetComponent<Button>();
     }
 
     // Update is called once per frame
@@ -31,6 +37,12 @@ public class ButtonPushed : MonoBehaviour
         {
             SelectedButton = -1;
         }
+        
+        //fanButton.SetActive(!HasActiveFan);
+        //plankButton.SetActive(!HasActivePlank);
+
+        fanButton.enabled = !HasActiveFan;
+        plankButton.enabled = !HasActivePlank;
     }
 
     public void ButtonClicked(int pushedButton)
