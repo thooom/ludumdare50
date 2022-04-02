@@ -7,7 +7,7 @@ public class FanPhysics : MonoBehaviour
 
     public void Awake()
     {
-        force = 5f;
+        force = 50f;
         yeet = transform.position - transform.parent.position;
     }
 
@@ -15,8 +15,10 @@ public class FanPhysics : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            Debug.Log("collision 1");
             if (collision.gameObject.GetComponent<Rigidbody2D>() != null)
             {
+                Debug.Log(yeet  );
                 collision.gameObject.GetComponent<Rigidbody2D>().AddForce(yeet * force * Time.deltaTime);
             }
         }
