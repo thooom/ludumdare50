@@ -16,7 +16,7 @@ public class ScoreCounter : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         scoreCounter.text = "Score: " + counter;
     }
