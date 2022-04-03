@@ -9,7 +9,7 @@ public class MainMenu : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-     MainMenuButton();   
+        MainMenuButton();   
     }
 
     public void MainMenuButton()
@@ -19,6 +19,7 @@ public class MainMenu : MonoBehaviour
     }
     public void PlayButton()
     {
+        Time.timeScale = 1f;
         UnityEngine.SceneManagement.SceneManager.LoadScene("DemoLevel");
     }
     public void OptionsButton()
@@ -51,5 +52,4 @@ public class MainMenu : MonoBehaviour
             #endif
         }
     }
- 
 }
