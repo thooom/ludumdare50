@@ -6,6 +6,7 @@ public class PlaceObjectLogic : MonoBehaviour
 {
     private List<GameObject> objectsToPlace;
     public GameObject lastPlacedObject;
+    private AudioManager audioManager;
     public static GameObject ActiveFan;
     public static GameObject ActivePlank;
 
@@ -45,6 +46,7 @@ public class PlaceObjectLogic : MonoBehaviour
 
     private void PlaceObject()
     {
+        audioManager.PlaySound(AudioManager.Sounds.placement);
         if (ButtonPushed.SelectedButton > -1 && ButtonPushed.SelectedButton < objectsToPlace.Count)
         {
             var position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -90,6 +92,7 @@ public class PlaceObjectLogic : MonoBehaviour
                 ButtonPushed.HasActivePlank = false;
             }
 
+            audioManager.PlaySound(AudioManager.Sounds.removal);
             Destroy(hit.collider.gameObject);
         }
     }

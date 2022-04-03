@@ -7,6 +7,7 @@ public class CameraBehavior : MonoBehaviour
 {
 
     public GameObject SnowBall;
+    public float Speed = 0.5f;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +18,9 @@ public class CameraBehavior : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        transform.position = Vector3.Lerp(transform.position, SnowBall.transform.position, 0.5f);
+        var deltaX = math.lerp(transform.position.x, SnowBall.transform.position.x, Speed);
+        var deltaY = math.lerp(transform.position.y, SnowBall.transform.position.y, Speed);
+        var newPos = new Vector3(deltaX, deltaY, transform.position.z);
+        transform.position = newPos;
     }
 }
