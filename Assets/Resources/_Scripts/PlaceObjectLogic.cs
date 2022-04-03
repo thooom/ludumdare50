@@ -14,6 +14,8 @@ public class PlaceObjectLogic : MonoBehaviour
         objectsToPlace = new List<GameObject>();
         objectsToPlace.Add(Resources.Load<GameObject>("Prefabs/Fan"));
         objectsToPlace.Add(Resources.Load<GameObject>("Prefabs/Plank"));
+        ActiveFan = null;
+        ActivePlank = null;
     }
 
     void Update()
