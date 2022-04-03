@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BatteryUpgrade : MonoBehaviour
 {
+    public BatteryBarBehaviour batteryBar;
     void Awake() 
     {
         BoxCollider2D boxCollider;
@@ -29,6 +31,8 @@ public class BatteryUpgrade : MonoBehaviour
         Debug.Log(collider.gameObject.name + " : " + collider.name + " : " + Time.time);
 
         if (collider.gameObject.tag == "Player") {
+            // batteryBar = GameObject.Find("BatterySlider").GetComponent<BatteryBarBehaviour>();
+            GameObject.Find("BatterySlider").GetComponent<Slider>().value = GameObject.Find("BatterySlider").GetComponent<Slider>().maxValue;
             Destroy(gameObject);
         }
     }

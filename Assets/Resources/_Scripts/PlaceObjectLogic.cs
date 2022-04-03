@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlaceObjectLogic : MonoBehaviour
 {
@@ -19,7 +20,7 @@ public class PlaceObjectLogic : MonoBehaviour
         objectsToPlace = new List<GameObject>();
         objectsToPlace.Add(Resources.Load<GameObject>("Prefabs/Fan"));
         objectsToPlace.Add(Resources.Load<GameObject>("Prefabs/Plank"));
-
+        batteryBar = GameObject.Find("BatterySlider").GetComponent<BatteryBarBehaviour>();
         batteryLevel = maxBatteryLevel;
         audioManager = GameObject.Find("PlayerScripts").GetComponent<AudioManager>();
         ActiveFan = null;
@@ -29,7 +30,7 @@ public class PlaceObjectLogic : MonoBehaviour
     void Update()
     {
         CleanUp();
-        batteryBar.SetBatteryBarLevel(batteryLevel, maxBatteryLevel);
+        batteryBar.SetBatteryBarLevel(GameObject.Find("BatterySlider").GetComponent<Slider>().value, maxBatteryLevel);
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -69,6 +70,7 @@ public class PlaceObjectLogic : MonoBehaviour
                 case 0:
                     ActiveFan = Instantiate(objectsToPlace[ButtonPushed.SelectedButton], position, Quaternion.identity);
                     lastPlacedObject = ActiveFan;
+                    GameObject.Find("BatterySlider").GetComponent<Slider>().value -= 10;
                     break;
                 case 1:
                     ActivePlank = Instantiate(objectsToPlace[ButtonPushed.SelectedButton], position, Quaternion.identity);
