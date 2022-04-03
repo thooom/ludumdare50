@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class BatteryUpgrade : MonoBehaviour
 {
-
-
     void Awake() 
     {
         BoxCollider2D boxCollider;
