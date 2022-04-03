@@ -15,7 +15,11 @@ public class LevelGenerator : MonoBehaviour
     void Start()
     {
         _segments = new List<GameObject>();
-        _segments.Add(Instantiate(PossibleSegments[0]));
+        var startSegment = Instantiate(PossibleSegments[0]);
+        var segmentDelta = transform.position - startSegment.GetComponent<Segment>().Start.transform.position;
+        startSegment.transform.position += segmentDelta;
+
+        _segments.Add(startSegment);
     }
 
     // Update is called once per frame
