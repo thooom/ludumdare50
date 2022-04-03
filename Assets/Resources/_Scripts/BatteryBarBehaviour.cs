@@ -11,7 +11,6 @@ public class BatteryBarBehaviour : MonoBehaviour
 
     public void SetBatteryBarLevel(float level, float maxLevel) 
     {
-        slider.gameObject.SetActive(level < maxLevel);
         slider.value = level;
         slider.maxValue = maxLevel;
 
