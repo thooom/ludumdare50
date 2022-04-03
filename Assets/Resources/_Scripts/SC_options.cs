@@ -11,6 +11,7 @@ public class SC_options : MonoBehaviour
     public AudioMixer audioMixer;
     float currentVolume;
     Resolution[] resolutions;
+
     // Start is called before the first frame update
     void Awake()
     {
