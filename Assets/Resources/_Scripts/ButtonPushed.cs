@@ -38,8 +38,8 @@ public class ButtonPushed : MonoBehaviour
             SelectedButton = -1;
         }
 
-        fanButton.enabled = !HasActiveFan;
-        plankButton.enabled = !HasActivePlank;
+        fanButton.enabled = PlaceObjectLogic.ActiveFan == null;
+        plankButton.enabled = PlaceObjectLogic.ActivePlank == null;
     }
 
     public void ButtonClicked(int pushedButton)
