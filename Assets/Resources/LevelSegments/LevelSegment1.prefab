@@ -175,7 +175,7 @@ SpriteShapeRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -650,14 +650,23 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -2.2967622, y: 0.3833605}
-  - {x: 0.17049026, y: 0.92276675}
-  - {x: 0.5829104, y: 0.8914924}
-  - {x: 1.482385, y: 0.44164148}
-  - {x: 2.3230634, y: -0.047205925}
-  - {x: 2.8811533, y: -0.16353272}
-  - {x: 3.9974275, y: 0.06693821}
-  - {x: 5.4548864, y: 0.64322466}
+  - {x: -2.316036, y: 0.11997611}
+  - {x: -1.4416683, y: 0.35155925}
+  - {x: -0.41028908, y: 0.57462794}
+  - {x: 0.1422719, y: 0.6586977}
+  - {x: 0.51169866, y: 0.6648974}
+  - {x: 0.86949426, y: 0.5402824}
+  - {x: 1.6250117, y: 0.0639203}
+  - {x: 2.1892064, y: -0.21589448}
+  - {x: 2.4693327, y: -0.31620565}
+  - {x: 2.8492799, y: -0.3691491}
+  - {x: 3.2232294, y: -0.3506583}
+  - {x: 3.4763165, y: -0.30773076}
+  - {x: 4.08917, y: -0.13973126}
+  - {x: 4.4572663, y: -0.008859426}
+  - {x: 4.87203, y: 0.15712747}
+  - {x: 5.337619, y: 0.3611273}
+  - {x: 5.5666094, y: 0.46146062}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -1038,25 +1047,38 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -2.5833807, y: 0.9393791}
-  - {x: -2.3738046, y: 1.2116954}
-  - {x: -1.7267339, y: 1.1873518}
-  - {x: 2.1923003, y: 1.169942}
-  - {x: 2.3627589, y: 1.1284015}
-  - {x: 2.5165024, y: 0.96258104}
-  - {x: 2.5696082, y: 0.6333712}
-  - {x: 2.480493, y: 0.28799528}
-  - {x: 2.082064, y: -0.37034065}
-  - {x: 1.5632763, y: -0.8317661}
-  - {x: 1.1364983, y: -0.9431134}
-  - {x: 0.81978834, y: -0.8745873}
-  - {x: 0.54759026, y: -0.5311246}
-  - {x: 0.28385907, y: -0.31225055}
-  - {x: -0.14482601, y: -0.23421288}
-  - {x: -0.9614736, y: -0.2693014}
-  - {x: -1.8285443, y: 0.008543074}
-  - {x: -2.5247164, y: 0.5952514}
-  - {x: -2.5814102, y: 0.9097203}
+  - {x: -0.93716496, y: -0.31219077}
+  - {x: -1.2738146, y: -0.24794999}
+  - {x: -1.6241732, y: -0.09832026}
+  - {x: -2.022068, y: 0.14102931}
+  - {x: -2.2746298, y: 0.3366428}
+  - {x: -2.5037377, y: 0.59721553}
+  - {x: -2.574069, y: 0.7667925}
+  - {x: -2.5580854, y: 0.98239326}
+  - {x: -2.4146843, y: 1.1555626}
+  - {x: -2.2200537, y: 1.2311251}
+  - {x: -2.009799, y: 1.2498078}
+  - {x: 2.0215168, y: 1.2490723}
+  - {x: 2.2686763, y: 1.1989988}
+  - {x: 2.4720383, y: 1.0373542}
+  - {x: 2.5650864, y: 0.80851984}
+  - {x: 2.558497, y: 0.5397434}
+  - {x: 2.5096288, y: 0.34645018}
+  - {x: 2.414648, y: 0.12067966}
+  - {x: 2.288486, y: -0.10096529}
+  - {x: 2.1367533, y: -0.31302807}
+  - {x: 1.9639757, y: -0.5083425}
+  - {x: 1.773232, y: -0.6789084}
+  - {x: 1.504799, y: -0.8406714}
+  - {x: 1.3350532, y: -0.9045353}
+  - {x: 1.0827525, y: -0.91961896}
+  - {x: 0.8344709, y: -0.8281436}
+  - {x: 0.6539489, y: -0.6527997}
+  - {x: 0.3915037, y: -0.38392258}
+  - {x: 0.01346615, y: -0.2642206}
+  - {x: -0.44586623, y: -0.2755896}
+  - {x: -0.8139006, y: -0.30858016}
+  - {x: -0.93716496, y: -0.31219077}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -1236,7 +1258,7 @@ SpriteShapeRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1484,6 +1506,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5178646041463841633}
+  - component: {fileID: 7518844845514478075}
   m_Layer: 0
   m_Name: LevelSegment1
   m_TagString: Untagged
@@ -1507,6 +1530,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7518844845514478075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3351173401029760875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cda13f3796e689f44be1dfc1f8720da8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Start: {fileID: 8762121257944016438}
+  End: {fileID: 8759294882965491947}
 --- !u!1 &5622584601660883580
 GameObject:
   m_ObjectHideFlags: 0
@@ -1682,7 +1719,7 @@ SpriteShapeRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -2039,19 +2076,22 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -2.8298855, y: 0.03112936}
-  - {x: -1.9837638, y: 0.4287055}
-  - {x: -1.5678291, y: 0.5121864}
-  - {x: -0.98487246, y: 0.36250222}
-  - {x: -0.41752082, y: -0.0014838874}
-  - {x: -0.10391731, y: 0.015713796}
-  - {x: 0.04101038, y: 0.0063784067}
-  - {x: 0.70262116, y: 0.11552559}
-  - {x: 1.9088521, y: 0.5182437}
-  - {x: 2.1704175, y: 0.56004643}
-  - {x: 2.362398, y: 0.47012484}
-  - {x: 2.508569, y: 0.2996245}
-  - {x: 2.619626, y: -0.022468328}
+  - {x: -2.7090716, y: -0.1960204}
+  - {x: -2.2003665, y: 0.06291446}
+  - {x: -1.9550333, y: 0.16392629}
+  - {x: -1.745296, y: 0.22552684}
+  - {x: -1.4126835, y: 0.2509298}
+  - {x: -1.1626183, y: 0.17998248}
+  - {x: -0.7504498, y: -0.08786365}
+  - {x: -0.5086427, y: -0.20313494}
+  - {x: -0.36138627, y: -0.23822138}
+  - {x: 0.06286302, y: -0.23781018}
+  - {x: 0.57334554, y: -0.14269707}
+  - {x: 1.6950353, y: 0.18457092}
+  - {x: 2.067751, y: 0.31326157}
+  - {x: 2.2507317, y: 0.2436749}
+  - {x: 2.3523102, y: 0.0353223}
+  - {x: 2.432015, y: -0.20160332}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -2100,7 +2140,7 @@ SpriteShapeRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -2452,7 +2492,7 @@ SpriteShapeRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
