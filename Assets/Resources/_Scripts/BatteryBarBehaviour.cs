@@ -8,7 +8,6 @@ public class BatteryBarBehaviour : MonoBehaviour
     public Slider slider;
     public Color low;
     public Color high;
-    // public Vector3 offset;
 
     public void SetBatteryBarLevel(float level, float maxLevel) 
     {

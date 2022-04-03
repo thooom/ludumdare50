@@ -4,6 +4,8 @@ public class FanPhysics : MonoBehaviour
 {
     float force;
 
+    public BatteryBarBehaviour batteryBar;
+
     public void Awake()
     {
         force = 5000f;
