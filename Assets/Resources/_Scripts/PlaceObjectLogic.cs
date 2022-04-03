@@ -35,21 +35,7 @@ public class PlaceObjectLogic : MonoBehaviour
         }
         if (Input.GetMouseButtonDown(1))
         {
-            Vector2 mousePos = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
-            RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero, 100f);
-            if (hit.collider != null && hit.collider.gameObject.tag == "Deletable")
-            {
-                if (hit.collider.gameObject.name.Contains("Fan"))
-                {
-                    ButtonPushed.HasActiveFan = false;
-                }
-                else if (hit.collider.gameObject.name.Contains("Plank"))
-                {
-                    ButtonPushed.HasActivePlank = false;
-                }
-
-                Destroy(hit.collider.gameObject);
-            }
+            DestroyObject();
         }
     }
 
@@ -80,5 +66,25 @@ public class PlaceObjectLogic : MonoBehaviour
         difference.Normalize();
         float rotation_z = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         lastPlacedObject.transform.rotation = Quaternion.Euler(0f, 0f, rotation_z);
+    }
+
+    private void DestroyObject()
+    {
+        Vector2 mousePos = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
+        RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero, 100f);
+
+        if (hit.collider != null && hit.collider.gameObject.tag == "Deletable")
+        {
+            if (hit.collider.gameObject.name.Contains("Fan"))
+            {
+                ButtonPushed.HasActiveFan = false;
+            }
+            else if (hit.collider.gameObject.name.Contains("Plank"))
+            {
+                ButtonPushed.HasActivePlank = false;
+            }
+
+            Destroy(hit.collider.gameObject);
+        }
     }
 }
