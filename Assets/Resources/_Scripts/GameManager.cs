@@ -1,8 +1,11 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerManager : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
     public ScoreCounter scoreBoard;
+    public GameObject player;
 
     private Vector3 startPos;
     private Vector3 currentPos;
@@ -11,13 +14,13 @@ public class PlayerManager : MonoBehaviour
     void Start()
     {
         scoreBoard = GameObject.Find("ScoreBoard").GetComponent<ScoreCounter>();
-        startPos = transform.position;
+        startPos = player.transform.position;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        currentPos = transform.position;
+        currentPos = player.transform.position;
         if (scoreBoard != null)
         {
             scoreBoard.counter = Mathf.RoundToInt((startPos - currentPos).magnitude);
