@@ -6,8 +6,8 @@ public class PlaceObjectLogic : MonoBehaviour
 {
     private List<GameObject> objectsToPlace;
     public GameObject lastPlacedObject;
-    public static bool HasActiveFan = false;
-    public static bool HasActivePlank = false;
+    public static GameObject ActiveFan;
+    public static GameObject ActivePlank;
 
     public static float batteryLevel;
     public static float maxBatteryLevel = 100;
@@ -24,6 +24,7 @@ public class PlaceObjectLogic : MonoBehaviour
 
     void Update()
     {
+        CleanUp();
         batteryBar.SetBatteryBarLevel(batteryLevel, maxBatteryLevel);
 
         if (Input.GetMouseButtonDown(0))
@@ -57,15 +58,17 @@ public class PlaceObjectLogic : MonoBehaviour
         {
             var position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             position.z = 0;
-            lastPlacedObject = Instantiate(objectsToPlace[ButtonPushed.SelectedButton], position, Quaternion.identity);
 
-            if (ButtonPushed.SelectedButton == 0)
+            switch (ButtonPushed.SelectedButton)
             {
-                ButtonPushed.HasActiveFan = true;
-            }
-            else if (ButtonPushed.SelectedButton == 1)
-            {
-                ButtonPushed.HasActivePlank = true;
+                case 0:
+                    ActiveFan = Instantiate(objectsToPlace[ButtonPushed.SelectedButton], position, Quaternion.identity);
+                    lastPlacedObject = ActiveFan;
+                    break;
+                case 1:
+                    ActivePlank = Instantiate(objectsToPlace[ButtonPushed.SelectedButton], position, Quaternion.identity);
+                    lastPlacedObject = ActivePlank;
+                    break;
             }
         
             ButtonPushed.SelectedButton = -1;
@@ -97,6 +100,21 @@ public class PlaceObjectLogic : MonoBehaviour
             }
 
             Destroy(hit.collider.gameObject);
+        }
+    }
+
+    private void CleanUp()
+    {
+        if (ActiveFan != null && !ActiveFan.GetComponent<Renderer>().isVisible)
+        {
+            Destroy(ActiveFan);
+            ActiveFan = null;
+        }
+
+        if (ActivePlank != null && !ActivePlank.GetComponent<Renderer>().isVisible)
+        {
+            Destroy(ActivePlank);
+            ActivePlank = null;
         }
     }
 }
