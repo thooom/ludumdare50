@@ -2,24 +2,21 @@ using UnityEngine;
 
 public class FanPhysics : MonoBehaviour
 {
-    Vector2 yeet;
     float force;
 
     public void Awake()
     {
-        force = 50f;
-        yeet = transform.position - transform.parent.position;
+        force = 5000f;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Deletable")
         {
             Debug.Log("collision 1");
             if (collision.gameObject.GetComponent<Rigidbody2D>() != null)
             {
-                Debug.Log(yeet  );
-                collision.gameObject.GetComponent<Rigidbody2D>().AddForce(yeet * force * Time.deltaTime);
+                collision.gameObject.GetComponent<Rigidbody2D>().AddForce((transform.position - transform.parent.position) * force * Time.deltaTime);
             }
         }
     }
