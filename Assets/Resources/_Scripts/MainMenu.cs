@@ -19,7 +19,7 @@ public class MainMenu : MonoBehaviour
     }
     public void PlayButton()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("DemoLevel");
     }
     public void OptionsButton()
     {
