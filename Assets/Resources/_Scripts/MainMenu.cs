@@ -4,15 +4,52 @@ using UnityEngine;
 
 public class MainMenu : MonoBehaviour
 {
+    public GameObject MainMenuUI;
+    public GameObject OptionsMenuUI;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+     MainMenuButton();   
     }
 
-    // Update is called once per frame
+    public void MainMenuButton()
+    {
+        MainMenuUI.SetActive(true);
+        OptionsMenuUI.SetActive(false);
+    }
+    public void PlayButton()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
+    }
+    public void OptionsButton()
+    {
+        MainMenuUI.SetActive(false);
+        OptionsMenuUI.SetActive(true);
+    }
+    public void QuitButton()
+    {
+        #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+        #else
+            Application.Quit();
+        #endif
+    }
+    public void BackButton()
+    {
+        MainMenuUI.SetActive(true);
+        OptionsMenuUI.SetActive(false);
+    }
+
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            #if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+            #else
+                Application.Quit();
+            #endif
+        }
     }
+ 
 }
