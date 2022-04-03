@@ -15,6 +15,7 @@ public class PlaceObjectLogic : MonoBehaviour
         objectsToPlace = new List<GameObject>();
         objectsToPlace.Add(Resources.Load<GameObject>("Prefabs/Fan"));
         objectsToPlace.Add(Resources.Load<GameObject>("Prefabs/Plank"));
+        audioManager = GameObject.Find("PlayerScripts").GetComponent<AudioManager>();
         ActiveFan = null;
         ActivePlank = null;
     }
