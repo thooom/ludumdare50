@@ -9,15 +9,23 @@ public class PlaceObjectLogic : MonoBehaviour
     public static bool HasActiveFan = false;
     public static bool HasActivePlank = false;
 
+    public static float batteryLevel;
+    public static float maxBatteryLevel = 100;
+    public BatteryBarBehaviour batteryBar;
+
     void Awake()
     {
         objectsToPlace = new List<GameObject>();
         objectsToPlace.Add(Resources.Load<GameObject>("Prefabs/Fan"));
         objectsToPlace.Add(Resources.Load<GameObject>("Prefabs/Plank"));
+
+        batteryLevel = maxBatteryLevel;
     }
 
     void Update()
     {
+        batteryBar.SetBatteryBarLevel(batteryLevel, maxBatteryLevel);
+
         if (Input.GetMouseButtonDown(0))
         {
             if (ButtonPushed.SelectedButton != -1)
@@ -36,6 +44,10 @@ public class PlaceObjectLogic : MonoBehaviour
         if (Input.GetMouseButtonDown(1))
         {
             DestroyObject();
+        }
+
+        if (ButtonPushed.HasActiveFan == true) {
+            batteryLevel -= 1;
         }
     }
 
