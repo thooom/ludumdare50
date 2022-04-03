@@ -140,6 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3448553f4076b744a39f06cd3240918, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  batteryBar: {fileID: 0}
 --- !u!1 &121326417
 GameObject:
   m_ObjectHideFlags: 0
@@ -2440,7 +2441,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8307450529718868262, guid: 206e6f12075716144997c9d77ef6f6c1, type: 3}
       propertyPath: m_Name
-      value: Slider
+      value: BatterySlider
       objectReference: {fileID: 0}
     - target: {fileID: 8307450529718868283, guid: 206e6f12075716144997c9d77ef6f6c1, type: 3}
       propertyPath: slider
