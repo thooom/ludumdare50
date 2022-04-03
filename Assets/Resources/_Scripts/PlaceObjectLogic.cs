@@ -21,6 +21,9 @@ public class PlaceObjectLogic : MonoBehaviour
         objectsToPlace.Add(Resources.Load<GameObject>("Prefabs/Plank"));
 
         batteryLevel = maxBatteryLevel;
+        audioManager = GameObject.Find("PlayerScripts").GetComponent<AudioManager>();
+        ActiveFan = null;
+        ActivePlank = null;
     }
 
     void Update()

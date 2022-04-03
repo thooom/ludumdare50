@@ -33,8 +33,7 @@ public class GameManager : MonoBehaviour
             scoreBoard.counter = Mathf.RoundToInt((startPos - currentPos).magnitude);
         }
 
-        // TODO: Trigger on player health instead
-        if (scoreBoard.counter >= 100)
+        if (SnowballBehaviour.CurrentHealth >= 0.9f)
         {
             EndScreenPanel.SetActive(true);
             var finalScoreText = GameObject.Find("FinalScore").GetComponent<Text>();
