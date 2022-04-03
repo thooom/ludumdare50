@@ -18,7 +18,6 @@ public class EndScreenButton : MonoBehaviour
 
     public void ButtonClicked()
     {
-        GameManager.EndScreenPanel.SetActive(false);
-        // Go to main menu
+        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
     }
 }
