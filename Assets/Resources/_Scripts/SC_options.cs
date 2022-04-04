@@ -7,9 +7,8 @@ using UnityEngine.UI;
 public class SC_options : MonoBehaviour
 {
     public Slider volumeSlider;
-    
-    public AudioMixer audioMixer;
-    float currentVolume;
+    public AudioSource musicPlayer;
+    public float currentVolume;
     Resolution[] resolutions;
 
     // Start is called before the first frame update
@@ -21,10 +20,10 @@ public class SC_options : MonoBehaviour
     // Update is called once per frame
 
 
-    public void setVolume(float volume)
+    public void setVolume()
     {
-        audioMixer.SetFloat("Volume", volume);
-        currentVolume = volume;
+        currentVolume = GameObject.Find("VolumeSlider").GetComponent<Slider>().value;
+        musicPlayer.volume = currentVolume;
     }
     public void setFullScreen(bool isFullScreen)
     {
@@ -41,17 +40,17 @@ public class SC_options : MonoBehaviour
     
     public void LoadSettings()
     {
-        
+        musicPlayer = GameObject.Find("MusicPlayer").GetComponent<AudioSource>();
         if (PlayerPrefs.HasKey("FullscreenPreference"))
             Screen.fullScreen = 
             Convert.ToBoolean(PlayerPrefs.GetInt("FullscreenPreference"));
         else
             Screen.fullScreen = true;
-        if (PlayerPrefs.HasKey("VolumePreference"))
+        /*if (PlayerPrefs.HasKey("VolumePreference"))
             volumeSlider.value = 
                         PlayerPrefs.GetFloat("VolumePreference");
         else
             volumeSlider.value = 
-                        PlayerPrefs.GetFloat("VolumePreference");
+                        PlayerPrefs.GetFloat("VolumePreference");*/
     }
 }
