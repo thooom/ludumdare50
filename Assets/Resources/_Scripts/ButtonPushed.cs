@@ -10,12 +10,14 @@ public class ButtonPushed : MonoBehaviour
     public static bool HasActivePlank = false;
     private Button fanButton;
     private Button plankButton;
+    private AudioManager aM;
 
     // Start is called before the first frame update
     void Start()
     {
         fanButton = GameObject.Find("SelectFanButton").GetComponent<Button>();
         plankButton = GameObject.Find("SelectPlankButton").GetComponent<Button>();
+        aM = GameObject.Find("PlayerScripts").GetComponent<AudioManager>();
     }
 
     // Update is called once per frame
@@ -44,6 +46,7 @@ public class ButtonPushed : MonoBehaviour
 
     public void ButtonClicked(int pushedButton)
     {
+        aM.PlaySound(AudioManager.Sounds.click);
         SelectedButton = pushedButton;
     }
 }
