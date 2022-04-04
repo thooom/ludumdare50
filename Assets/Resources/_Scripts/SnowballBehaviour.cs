@@ -30,4 +30,13 @@ public class SnowballBehaviour : MonoBehaviour
         player.transform.localScale = Vector3.Lerp(originalScale, destinationScale, CurrentHealth);
         healthLost += 0.1f;
     }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (!GetComponent<AudioSource>().isPlaying)
+        {
+            GetComponent<AudioSource>().Play();
+        }
+       
+    }
 }
