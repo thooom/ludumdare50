@@ -3,8 +3,25 @@ using UnityEngine;
 public class MusicPlayer : MonoBehaviour
 {
     private AudioSource _audioSource;
+    private GameObject[] other;
+    private bool NotFirst = false;
+
     private void Awake()
     {
+        other = GameObject.FindGameObjectsWithTag("Music");
+
+        foreach (GameObject oneOther in other)
+        {
+            if (oneOther != gameObject)
+            {
+                Destroy(oneOther);
+            }
+            if (oneOther.scene.buildIndex == -1)
+            {
+                NotFirst = true;
+            }
+        }
+
         DontDestroyOnLoad(transform.gameObject);
         _audioSource = GetComponent<AudioSource>();
         PlayMusic();

@@ -31,9 +31,9 @@ Transform:
   - {fileID: 8583899210556676497}
   - {fileID: 56626791836722207}
   - {fileID: 4318936989519193283}
+  - {fileID: 8525810763209144256}
   - {fileID: 8164161858601120113}
   - {fileID: 4001602215362637942}
-  - {fileID: 8525810763209144256}
   m_Father: {fileID: 5178646041463841633}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -49,6 +49,7 @@ GameObject:
   - component: {fileID: 5404598209660319973}
   - component: {fileID: 3105407186347135735}
   - component: {fileID: 4069189273876689106}
+  - component: {fileID: 3088946235589378316}
   m_Layer: 0
   m_Name: Open Sprite Shape (3)
   m_TagString: Untagged
@@ -68,7 +69,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1181622176808599328}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1971053207 &5404598209660319973
 SpriteShapeRenderer:
@@ -80,7 +81,7 @@ SpriteShapeRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -254,7 +255,7 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0.2
   m_Points:
-  - {x: -1.7268714, y: -0.087558344}
+  - {x: -1.8691748, y: -0.051986292}
   - {x: -1.1061192, y: -0.33899787}
   - {x: -0.7305427, y: -0.3792271}
   - {x: -0.30014446, y: -0.41050568}
@@ -268,11 +269,23 @@ EdgeCollider2D:
   - {x: 5.8575435, y: -1.9922565}
   - {x: 6.778611, y: -2.0565233}
   - {x: 6.882898, y: -2.076854}
-  - {x: 6.7897305, y: -2.0787487}
+  - {x: 6.908314, y: -2.0906048}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &3088946235589378316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2676176231693794406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 076ce28b188391240b85bdac8b61388e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2736156686260553680
 GameObject:
   m_ObjectHideFlags: 0
@@ -317,6 +330,7 @@ GameObject:
   - component: {fileID: 7888410390368620811}
   - component: {fileID: 1070005957615528428}
   - component: {fileID: 2781480837992975567}
+  - component: {fileID: 7180189118061958177}
   m_Layer: 0
   m_Name: Open Sprite Shape (2)
   m_TagString: Untagged
@@ -336,7 +350,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1181622176808599328}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1971053207 &7888410390368620811
 SpriteShapeRenderer:
@@ -348,7 +362,7 @@ SpriteShapeRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -512,18 +526,30 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0.2
   m_Points:
-  - {x: -2.1755223, y: 0.20970029}
+  - {x: -2.3066325, y: 0.1501047}
   - {x: -1.9420763, y: 0.23214504}
   - {x: -1.5063543, y: 0.25212443}
   - {x: -0.15548894, y: 0.008171474}
   - {x: 0.7850333, y: 0.06009279}
   - {x: 5.490891, y: 0.0035676677}
-  - {x: 6.950816, y: -0.024308395}
-  - {x: 6.9253817, y: -0.024750505}
+  - {x: 7.0700073, y: -0.036227416}
+  - {x: 7.139926, y: -0.036669526}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &7180189118061958177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3194726830189561711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 076ce28b188391240b85bdac8b61388e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3351173401029760875
 GameObject:
   m_ObjectHideFlags: 0
@@ -627,7 +653,7 @@ SpriteShapeRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -858,7 +884,7 @@ SpriteShapeRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1225,7 +1251,7 @@ SpriteShapeRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -2270,7 +2296,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3650742150566014508, guid: d54a4ceeb82fd4c49b31dc38a39a44b0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -16.79
+      value: -16.46
       objectReference: {fileID: 0}
     - target: {fileID: 3650742150566014508, guid: d54a4ceeb82fd4c49b31dc38a39a44b0, type: 3}
       propertyPath: m_LocalPosition.z
