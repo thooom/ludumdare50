@@ -12,6 +12,10 @@ public class MusicPlayer : MonoBehaviour
 
         foreach (GameObject oneOther in other)
         {
+            if (oneOther != gameObject)
+            {
+                Destroy(oneOther);
+            }
             if (oneOther.scene.buildIndex == -1)
             {
                 NotFirst = true;
